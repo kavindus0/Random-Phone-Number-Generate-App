@@ -25,15 +25,17 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "$numberGenerated",
+                "+94 7$numberGenerated",
                 style: const TextStyle(fontSize: 24),
               ),
               IconButton(
                 onPressed: () async {
                   await Clipboard.setData(
-                      const ClipboardData(text: "your text"));
+                      ClipboardData(text: "+94 7$numberGenerated"));
                 },
                 icon: const Icon(Icons.copy),
                 iconSize: 24,
@@ -50,6 +52,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 setState(
                   () {
                     numberGenerated = Random().nextInt(100000000);
+                    while ((numberGenerated.toString()).length == 7)
+                      numberGenerated = Random().nextInt(100000000);
                   },
                 );
               },
