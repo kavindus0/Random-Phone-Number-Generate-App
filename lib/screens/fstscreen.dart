@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -10,6 +13,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var numberGenerated = Random().nextInt(100000000);
+  @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,16 +27,33 @@ class _MyHomePageState extends State<MyHomePage> {
           Row(
             children: [
               Text(
-                'Random Phone Number Generator',
-                style: TextStyle(fontSize: 24),
+                "$numberGenerated",
+                style: const TextStyle(fontSize: 24),
               ),
-              C
+              IconButton(
+                onPressed: () async {
+                  await Clipboard.setData(
+                      const ClipboardData(text: "your text"));
+                },
+                icon: const Icon(Icons.copy),
+                iconSize: 24,
+                color: Colors.blueGrey,
+                // copied successfully
+              ),
             ],
           ),
           SizedBox.fromSize(
-            size: Size(0, 60),
+            size: const Size(0, 60),
           ),
-          TextButton(onPressed: null, child: Text('Generate'))
+          TextButton(
+              onPressed: () {
+                setState(
+                  () {
+                    numberGenerated = Random().nextInt(100000000);
+                  },
+                );
+              },
+              child: Text('Generate'))
         ],
       ),
     );
