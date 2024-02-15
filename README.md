@@ -1,16 +1,5 @@
-# themp01
+# Random Phone Number Generate App
 
-A new Flutter project.
+![ScreenRecording2024-02-15at21 07 21-ezgif com-video-to-gif-converter](https://github.com/kavindus0/Random-Phone-Number-Generate-App/assets/126804361/f8c3ebcc-a03d-47b3-87ee-0a29c1f547d0)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## (Ongoing Flutter Project)
